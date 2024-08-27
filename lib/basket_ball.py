@@ -190,6 +190,10 @@ def get_all_players():
     players = game['home']['players'] + game['away']['players']
     return players
 
+def get_all_teams():
+    teams = game["home"]["team"] + game["away"]["team"]
+    return teams
+
 def num_points_per_game(player_name):
     players = get_all_players()
     for player in players:
@@ -197,6 +201,18 @@ def num_points_per_game(player_name):
         if player['name'] == player_name:
             return player['points_per_game']
         
+def player_age(player_name):
+    players = get_all_players()
+    for player in players:
+        if player['name'] == player_name:
+            return player['age']
+
+def team_colors(team_name):
+    teams = get_all_teams()
+    for team in teams:
+        if team['color'] == team_name:
+            return team['color']
+
 
         
 
