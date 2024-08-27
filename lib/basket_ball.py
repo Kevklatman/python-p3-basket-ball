@@ -1,3 +1,4 @@
+import ipdb
 def game_dict():
     return {
         "home": {
@@ -182,3 +183,22 @@ def game_dict():
             ]
         }
     }
+
+game = game_dict()
+
+def get_all_players():
+    players = game['home']['players'] + game['away']['players']
+    return players
+
+def num_points_per_game(player_name):
+    players = get_all_players()
+    for player in players:
+        print(player['name'])
+        if player['name'] == player_name:
+            return player['points_per_game']
+        
+
+        
+
+
+ipdb.set_trace()
