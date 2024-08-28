@@ -215,6 +215,14 @@ def team_names():
     teams = game['home']['team_name'] + game['away']['team_name']
     return teams
     
+def player_numbers(team_name):
+    players = get_all_players
+    if game['home']['team_name'] == team_name:
+        return players['number']
+    elif game['away']['team_name'] == team_name:
+        return players['number']
+
+
         
 
 
