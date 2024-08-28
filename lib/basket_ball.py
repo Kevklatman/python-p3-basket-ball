@@ -223,6 +223,12 @@ def player_numbers(team_name):
     else:
         return None
 
+def player_stats(player_name):
+    players = get_all_players
+    stats = players [2, 9]
+    for player in players:
+        if player == player_name:
+            return stats
 
 
         
