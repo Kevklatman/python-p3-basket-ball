@@ -211,7 +211,9 @@ def team_colors(team_name):
     else:
         return None
 
-
+def team_names():
+    team_names = game['home']['team_name'] + game['away']['team_name']
+    return team_names
     
         
 
