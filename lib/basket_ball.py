@@ -216,11 +216,13 @@ def team_names():
     return teams
     
 def player_numbers(team_name):
-    players = get_all_players
-    if game['home']['team_name'] == team_name:
-        return players['number']
-    elif game['away']['team_name'] == team_name:
-        return players['number']
+    if team_name == game['home']['team_name']:
+        return [player['number'] for player in game['home']['players']]
+    elif team_name == game['away']['team_name']:
+        return [player['number'] for player in game['away']['players']]
+    else:
+        return None
+
 
 
         
