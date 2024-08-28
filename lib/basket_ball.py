@@ -193,15 +193,16 @@ def get_all_players():
 def num_points_per_game(player_name):
     players = get_all_players()
     for player in players:
-        print(player['name'])
         if player['name'] == player_name:
             return player['points_per_game']
-        
+    return None
+
 def player_age(player_name):
     players = get_all_players()
     for player in players:
         if player['name'] == player_name:
             return player['age']
+    return None
 
 def team_colors(team_name):
     if team_name == game['home']['team_name']:
@@ -212,9 +213,8 @@ def team_colors(team_name):
         return None
 
 def team_names():
-    teams = game['home']['team_name'] + game['away']['team_name']
-    return teams
-    
+    return [game['home']['team_name'], game['away']['team_name']]
+
 def player_numbers(team_name):
     if team_name == game['home']['team_name']:
         return [player['number'] for player in game['home']['players']]
@@ -224,18 +224,8 @@ def player_numbers(team_name):
         return None
 
 def player_stats(player_name):
-    players = get_all_players
-    stats = players [2, 9]
+    players = get_all_players()
     for player in players:
-        if player == player_name:
-            return stats
-
-
-        
-
-
-
-        
-
-
-ipdb.set_trace()
+        if player['name'] == player_name:
+            return player
+    return None
